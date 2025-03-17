@@ -1,5 +1,5 @@
 # BatDetective
-Cartarea coloniilor de lilieci din zonele urbane/Bat Detective 
+Cartarea coloniilor de lilieci din zonele urbane
 
 <br />
 
