@@ -1,0 +1,72 @@
+API Contract for Getting Locations by UserId.
+Endpoint: /api/locations/user/{userId}
+Method: GET
+Request Content-Type: N/A
+
+Request Parameters:
+Parameter	Type	Required	Description
+userId	String	Yes (Path)	The id of Location for which locations are being retrieved.
+
+Success Response:
+HTTP Status	Description
+200 OK	    List of locations successfully retrieved.
+
+Response Content-Type:
+application/json
+
+Response Body Example:
+{
+    {
+        "id": "63a16bf7293432b8f4c2a92d",
+        "description": "Beautiful view of a park",
+        "latitude": "34.0522",
+        "longitude": "-118.2437",
+        "image": "base64encoded-image-or-url",  // The stored file reference or null if no image
+        "dateAndTimeOfAddingLocation": "2024-12-11T15:45:00",
+        "userId": "5f83a3d2e8b17c3b7808b4e2",
+        "dateAndTimeOfObservation": "2024-12-11T15:30:00",
+        "individualOrColony": "Colony",
+        "flying": "Flying",
+        "moveOption": null,
+        "typeOfBuilding": null
+    },
+    {
+        "id": "63a16bf7293432b8f4c2a92d",
+        "description": "Bats flying over park",
+        "latitude": "34.0523",
+        "longitude": "-118.2457",
+        "image": "base64encoded-image-or-url",  // The stored file reference or null if no image
+        "dateAndTimeOfAddingLocation": "2024-12-11T15:45:00",
+        "userId": "5f83a3d2e8b17c3b7808b4e2",
+        "dateAndTimeOfObservation": "2024-11-11T15:30:00",
+        "individualOrColony": "Individual",
+        "flying": null,
+        "moveOption": "Stationary",
+        "typeOfBuilding": "Closed"
+    }
+}
+
+Failure Responses
+400 Bad Request - Invalid userId: Occurs when the userId is invalid or malformed.
+{
+  "flag": true,
+  "code": 400,
+  "message": "Invalid id provided.",
+  "data": ""
+}
+
+404 Not Found - No Locations Found: Occurs when no locations are found for the given userId.
+{
+  "flag": true,
+  "code": 404,
+  "message": "No locations found for this id.",
+  "data": []
+}
+
+500 Internal Server Error: Occurs due to an unexpected server-side issue.
+{
+  "flag": true,
+  "code": 500,
+  "message": "Unexpected server error.",
+  "data": {}
+}

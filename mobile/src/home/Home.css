@@ -1,0 +1,27 @@
+
+.homeTitle{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: 10rem;
+    color: #838383;
+}
+
+.homeTitle2{
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: #838383;
+}
+.page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    --background: #B9BDC1;
+    height: 100vh; /* Full viewport height for vertical centering */
+    text-align: center;
+
+
+}

@@ -1,0 +1,106 @@
+API Contract for Updating a Location
+Endpoint: Update Location by ID
+URL: /api/locations/{locationId}
+Method: PUT
+Request Content-Type: multipart/form-data
+
+Request Parameters:
+Parameter	                Type	        Required	Description
+locationId	                String	        Yes (Path)	The unique identifier of the location to be deleted.
+description	                String	        No	        A description of the location.
+longitude	                String	        Yes	        The longitude coordinate of the location.
+latitude	                String	        Yes	        The latitude coordinate of the location.
+image	                    File (binary)	No	        An image of the location.
+dateAndTimeOfObservation	String	        Yes	        The date and time the location was observed (format: YYYY-MM-DDTHH:MM:SS).
+individualOrColony	        String	        Yes	        Specifies whether the observation is of an individual bat or a colony.
+flying	                    String	        No	        Optional field, only sent if the value is "Flying". Otherwise, this field is omitted or empty.
+moveOption	                String	        No	        Specifies "Entering", "Exiting", or "Stationary".
+typeOfBuilding	            String	        No	        The type of building where the bats were observed.
+
+Sample Request (Using form-data in Postman):
+Key: description              Value: Bats flying over park
+Key: latitude                 Value: 34.0523
+Key: longitude                Value: -118.2457
+Key: image                    File: (choose a file)
+Key: dateAndTimeOfObservation Value: 2024-11-11T15:30:00
+Key: individualOrColony       Value: Individual
+Key: flying                   Value:
+Key: moveOption               Value: Stationary
+Key: typeOfBuilding           Value: Closed
+
+
+Request Body
+Description: Contains the fields to update a location.
+
+
+Success Response (with multipart/form-data)
+HTTP Status: 200
+
+Response Body:
+{
+    "id": "63a16bf7293432b8f4c2a92d",
+    "description": "Bats flying over park",
+    "latitude": "34.0523",
+    "longitude": "-118.2457",
+    "image": "base64encoded-image-or-url",  // The stored file reference or null if no image
+    "dateAndTimeOfAddingLocation": "2024-12-11T15:45:00",
+    "userId": "5f83a3d2e8b17c3b7808b4e2",
+    "dateAndTimeOfObservation": "2024-11-11T15:30:00",
+    "individualOrColony": "Individual",
+    "flying": null,
+    "moveOption": "Stationary",
+    "typeOfBuilding": "Closed"
+}
+
+
+Failure Responses
+HTTP Status: 400 Bad Request
+Response Body (JSON):
+
+{
+"flag": false,
+"code": 400,
+"message": "Invalid input data: 'longitude' and 'latitude' are required.",
+"data": ""
+}
+
+HTTP Status: 401 Unauthorized
+Response Body (JSON):
+
+{
+"flag": true,
+"code": 401,
+"message": "Unauthorized access",
+"data": ""
+}
+
+HTTP Status: 403 Forbidden
+Response Body (JSON):
+
+{
+"flag": true,
+"code": 403,
+"message": "Access is forbidden",
+"data": ""
+}
+
+HTTP Status: 404 Not Found
+Response Body (JSON):
+
+{
+"flag": true,
+"code": 404,
+"message": "Resource not found",
+"data": ""
+}
+
+HTTP Status: 500 Internal Server Error
+Response Body (JSON):
+
+{
+"flag": true,
+"code": 500,
+"message": "Unexpected server error",
+"data": {}
+}
+

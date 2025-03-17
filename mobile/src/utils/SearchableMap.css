@@ -1,0 +1,13 @@
+.searchBar{
+    width: 90vw;
+    height: 10vh;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.harta2{
+    width: 90vw;
+    height: 60vh;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+}

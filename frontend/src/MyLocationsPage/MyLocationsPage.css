@@ -1,0 +1,62 @@
+.textAndButtonsGrouper{
+    display: flex;
+    position: relative;
+}
+
+/*#editButtonDiv{*/
+/*    margin-left: 6rem;*/
+/*}*/
+
+/*#deleteIcon{*/
+/*    padding-left: 2rem;*/
+/*    padding-top: 0.2em;*/
+/*}*/
+#editButtonDiv{
+    position: absolute;
+    top: 0.1em;
+    right: 3em;
+}
+
+#deleteIcon{
+    position: absolute;
+    top: 0.1em;
+    right: 0.1em;
+}
+
+#editButtonDiv:hover,#deleteIcon:hover {
+    cursor: pointer;
+    color: red;
+}
+
+#closeDialogButton{
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+#confirmDialogButton{
+    width: 5rem;
+    background: red;
+    border: 1px solid red;
+    border-radius: 20px;
+    margin-left: 3rem;
+}
+.textGrouper{
+    width:23.4rem;
+}
+#confirmDialogButton:hover{
+    cursor:pointer;
+}
+
+#timeSpan{
+    opacity: 40%;
+}
+
+.location-description{
+    max-width: 35rem;
+    word-wrap: break-word;
+    white-space: normal;
+}

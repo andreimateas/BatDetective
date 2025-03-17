@@ -1,0 +1,51 @@
+.FormReportWrapper{
+    margin: 1rem;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem 2rem 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ReportsWrapper{
+    background-color: #f0f0f0;
+}
+
+.FormReportWrapper h2{
+    font-weight: bold;
+}
+
+.FormReportWrapper input{
+    border: 1px solid rgba(121, 121, 121, 0.4);
+    border-radius: 10px;
+    width: 10rem;
+    padding: 5px;
+}
+
+.FormReportWrapper label{
+    font-family: Lora, sans-serif;
+    font-size: 16px;
+}
+
+.FormReportWrapper div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.FormReportWrapper form{
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.ReportsWrapper{
+    display: flex;
+    gap: 2rem;
+    font-family: Inter, sans-serif;
+}
+
+.FormReportWrapper button{
+    max-width: 200px;
+}
+

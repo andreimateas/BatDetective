@@ -1,0 +1,47 @@
+#map-page {
+    width: 37vw;
+    height: 93vh;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.map-types {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 5px;
+    left: 82vw;
+    top: 83vh;
+    z-index: 1000;
+    height: 5%;
+    width: 10%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color: #aaaaaa;
+}
+
+
+.map-type-button {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    font-family: "Inter", serif;
+}
+
+.map-type-button:hover {
+    background-color: #E2F6FB;
+}
+
+.vertical-line {
+    position: relative;
+    width: 1px;
+    height: 60%;
+    background-color: #d9d9d9;
+}

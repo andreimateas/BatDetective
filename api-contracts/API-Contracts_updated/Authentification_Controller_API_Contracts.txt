@@ -1,0 +1,99 @@
+Authentication Controller
+
+
+1. Register
+Endpoint: POST /batdetective/auth/register
+Description: Register endpoint. After registering it sends an email with confirmation token.
+At register, the user is given the BASIC role by default.
+Request Body:
+{
+"username": "string",
+"password": "string",
+"email": "string",
+}
+Response body
+{
+  "flag": true,
+  "code": 201,
+  "message": "User created successfully",
+  "data": null
+}
+401 Unauthorized: If registration requires pre-authentication, and the client fails to provide a valid token.
+403 Forbidden: Registration is not allowed.
+404 Not Found: Not applicable for this endpoint unless there's a misconfigured route.
+406 Not Acceptable: The client requests a response format that the server does not support.
+500 Internal Server Error: Server-side issues such as database connectivity problems or failure to send confirmation emails.
+
+
+
+2. Enable User by checking token received in email (after the registration endpoint, this endpoint has to be called for the registration to be complete)
+Endpoint: PUT /batdetective/auth/enable/{token}
+Description: To enable the user that just registered, the token received in the email must be passed to the endpoint 
+Path Parameters: -it is going to be passed in the endpoint in place of {token}, e.g: PUT /batdetective/auth/enable/yRuY6LUIIxfOFHIoJm-EXkpbAe6a7_Ey
+token: Confirmation token. 
+Response body
+{
+  "flag": true,
+  "code": 200,
+  "message": "User enabled successfully.",
+  "data": null
+}
+401 Unauthorized: Token for enabling the account is invalid or missing.
+403 Forbidden: The account cannot be enabled.
+404 Not Found:  The token does not match any existing user or account.
+406 Not Acceptable:  The response format requested by the client is unsupported.
+500 Internal Server Error:  Server-side error, such as a failure to update account status in the database.
+
+!P.S: The two endpoints above do not return any data about the registered user to the frontend, because that is going to happen only at login. so it is necessary that after these two endpoints, after the registration is complete, the user is redirected to the login page where it will log in with its new account, and only then, the data field in the response will contain, encoded in a jwt token (which can be decoded on frontend and the values from the fields can be taken): username, role and id, like in the following example:
+{
+  "sub": "beti",
+  "scope": "ADMIN", -role
+  "iss": "self",
+  "exp": 1736615659,
+  "iat": 1736529259,
+  "userId": "6781479d9bccf96405066eb4"
+}
+The ROLES can be:
+OWNER-hardcoded at application start, can view reports and change another user's BASIC role to ADMIN role.
+ADMIN-equivalent of researcher, can view reports
+BASIC-role given by default at register, can do everything instead of view reports and change another user's role.
+The permitted actions of owner and admin have to be handled on the frontend (e.g: based on the role of the user-that you have been given as information in the data field at log in-you will load a page where the user can generate reports if it is admin or owner, or a page where this functionality is not shown, if the user is basic). That is NOT handled on the backend.
+
+
+
+3. Login
+Endpoint: POST /batdetective/auth/login
+Description: Log in and generate a JWT token(with the user's encoded data) needed for further operations.
+Request Body:
+{
+"username": "string",
+"password": "string"
+}
+Response body
+{
+  "flag": true,
+  "code": 200,
+  "message": "Login successful.",
+  "data": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJiZXRpbmFCIiwic2NvcGUiOiJCQVNJQyIsImlzcyI6InNlbGYiLCJleHAiOjE3MzY2ODMzMTgsImlhdCI6MTczNjU5NjkxOCwidXNlcklkIjoiNjc4MjVhYjA1M2FlMTA0ZDYwNDYwMWU2In0.Vcw3jdEsYpP-EYQjxCQ5vjrhyuaQuz_3z51Js4kSvECameac48W-eASgC0M7Fl8h48t667KCniG6MHUH4Zn8vteTIniGKMUDjgxEf724O8GDePhVlBE16oi8VvE-gUlTHYwlegU2UlXieEZCWu9zICszBZMhu8MUkL-FbVE4srCgFffzWKDVEUrJiaryM47-3JfwwHexwHuvFO6nJS98Xd_sNVoO-w7H80GSiyzw8Ze0SMu5iepS0sfRDailf012b2ej1_9nZNt7SMMMqrkc3LePPmN9j1IS0jgzNbGCfNPzXiFhwt7TkKOTsK53-oemuEw8dD_YDjxx4iulGLM3Fg"
+} -this is the token that has to be decoded
+
+401 Unauthorized: Email or username is incorrect, or account is not yet activated.
+403 Forbidden: Login is restricted.
+404 Not Found: Not applicable for login.
+406 Not Acceptable: The server cannot process the requested response format.
+500 Internal Server Error: Issues such as database errors or token generation failure.
+
+
+
+4. Promote to ADMIN role
+Endpoint: PUT /batdetective/auth/promote_admin
+Description: Input the email of the user to be promoted to the admin role
+Request body:
+only the email as plain string. e.g: "rsustrean@gmail.com"
+Response body
+{
+  "flag": true,
+  "code": 200,
+  "message": "Promote to admin succesful",
+  "data": null
+}

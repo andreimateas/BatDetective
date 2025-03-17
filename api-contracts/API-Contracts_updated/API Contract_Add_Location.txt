@@ -1,0 +1,122 @@
+API Contract for Adding a Location
+Here is the updated API contract based on the modified Location class and its related DTOs:
+
+Endpoint: Add Location
+URL: /api/locations
+Method: POST
+Request Content-Type: multipart/form-data
+
+Request Body (form-data):
+Field Name			        Type		    Required	Description
+description			        String		    No		    Optional description of the location. If not provided, defaults to null or a predefined value.
+latitude			        String		    Yes		    Latitude of the location. Example: 34.0522.
+longitude			        String		    Yes		    Longitude of the location. Example: -118.2437.
+image				        File (binary)	No		    Optional image of the location, uploaded as a file.
+dateAndTimeOfObservation	String		    Yes		    ISO 8601 formatted date and time when the observation was made. Example: 2024-12-11T15:30:00.
+individualOrColony		    String		    Yes		    Specifies whether it’s an "Individual" or "Colony".
+flying				        String		    No		    Optional field, only sent if the value is "Flying". Otherwise, this field is omitted or empty.
+moveOption			        String		    No		    Specifies "Entering", "Exiting", or "Stationary". Required only if flying is empty.
+typeOfBuilding			    String		    No		    Describes the type of building. Required only if flying is empty.
+
+Sample Request (Using form-data in Postman):
+Key: description              Value: Beautiful view of a park
+Key: latitude                 Value: 34.0522
+Key: longitude                Value: -118.2437
+Key: image                    File: (choose a file)
+Key: dateAndTimeOfObservation Value: 2024-12-11T15:30:00
+Key: individualOrColony       Value: Colony
+Key: flying                   Value: Flying
+Key: moveOption               Value: 
+Key: typeOfBuilding           Value: 
+
+
+Success Response (with multipart/form-data)
+HTTP Status: 201 Created
+
+Response Body:
+{
+    "id": "63a16bf7293432b8f4c2a92d",
+    "description": "Beautiful view of a park",
+    "latitude": "34.0522",
+    "longitude": "-118.2437",
+    "image": "base64encoded-image-or-url",  // The stored file reference or null if no image
+    "dateAndTimeOfAddingLocation": "2024-12-11T15:45:00",
+    "userId": "5f83a3d2e8b17c3b7808b4e2",
+    "dateAndTimeOfObservation": "2024-12-11T15:30:00",
+    "individualOrColony": "Colony",
+    "flying": "Flying",
+    "moveOption": null,
+    "typeOfBuilding": null
+}
+
+Failure Response
+400 Bad Request - Missing Required Fields:
+Occurs when one or more mandatory fields are missing in the request.
+HTTP Status: 400 Bad Request
+Response Body:
+{
+  "flag": true,
+  "code": 400,
+  "message": "Missing required fields: latitude, longitude, dateAndTimeOfObservation, individualOrColony",
+  "data": ""
+}
+
+400 Bad Request - Invalid Date Format:
+Occurs when dateAndTimeOfObservation is not in the correct format (YYYY-MM-DDTHH:MM:SS).
+HTTP Status: 400 Bad Request
+Response Body:
+{
+  "flag": true,
+  "code": 400,
+  "message": "Invalid date format for dateAndTimeOfObservation. Expected format is 'YYYY-MM-DDTHH:MM:SS'.",
+  "data": ""
+}
+
+400 Bad Request - Image Too Large:
+Occurs when the uploaded image exceeds the maximum allowed size.
+HTTP Status: 400 Bad Request
+Response Body:
+{
+  "flag": true,
+  "code": 400,
+  "message": "Image size exceeds the maximum limit of 5MB.",
+  "data": ""
+}
+
+401 Unauthorized:
+Occurs when the user is not authenticated.
+HTTP Status: 401 Unauthorized
+Response Body:
+{
+  "flag": true,
+  "code": 401,
+  "message": "Unauthorized access",
+  "data": ""
+}
+
+403 Forbidden:
+Occurs when the authenticated user does not have permission to add a location.
+HTTP Status: 403 Forbidden
+Response Body:
+{
+  "flag": true,
+  "code": 403,
+  "message": "Access is forbidden",
+  "data": ""
+}
+
+500 Internal Server Error:
+Occurs due to an unexpected server error.
+HTTP Status: 500 Internal Server Error
+Response Body:
+{
+  "flag": true,
+  "code": 500,
+  "message": "Unexpected server error",
+  "data": {}
+}
+
+
+
+
+

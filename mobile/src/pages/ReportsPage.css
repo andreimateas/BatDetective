@@ -1,0 +1,39 @@
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    --background: #B9BDC1;
+    height: 100vh; /* Full viewport height for vertical centering */
+    text-align: center;
+
+
+}
+
+/*.reports-management h2 {*/
+/*    margin-bottom: 16px;*/
+/*    font-size: 1.2rem;*/
+/*    color: #555;*/
+/*}*/
+/*.ion-padding{*/
+/*    padding: 0 !important;*/
+/*    --background: #000;*/
+/*}*/
+/*.reports-management ion-button {*/
+/*    margin-top: 12px;*/
+/*}*/
+
+/*.reports-management ion-grid {*/
+/*    margin-top: 16px;*/
+/*}*/
+
+/*.reports-management ion-row {*/
+/*    align-items: center;*/
+/*}*/
+
+/*.map-container {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*}*/
+

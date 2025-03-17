@@ -1,0 +1,178 @@
+Universal pe proiect:
+
+ ~ Font:
+font-family: 'Zen Old Mincho', serif
+color: black -- label/input text
+	
+font-size: 16px -- label/input text
+	20+ px pentru titluri, etc.
+	14px label la checkbox-uri
+font-weight: 100 -- text din form-uri
+	200+ titluri, etc.
+backgound-image: 'liliac.jpeg'
+
+ ~ Form-uri + harta:
+background-color: #e5e5e5; -- form-uri
+border-radius: 10px; -- box-uri pt form/harta
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); -- box-uri pt form/harta
+
+ ~ Input box-uri:
+background-color: white
+height: 1.5rem minim
+
+color: #888 -- input box icon 
+
+ ~ Butoane:
+background-color: black
+	hover: white
+color: white
+	hover: black
+
+ ~ Checkbox:
+accent-color: black --checked
+
+ ~ Mesaje de succes/eroare:
+.message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+-- inaltime ajustata in functie de mesaj
+
+
+Design pagina log in:
+
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap');
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    background-image: url('liliac.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.form-wrapper {
+    height: 40%;
+    display: flex;
+    padding: 5rem;
+    margin-top: 10rem;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: 7rem;
+    border-color: black;
+}
+
+
+
+.welcome {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 32px;
+    font-weight: 200;
+    color: black;
+    position: absolute;
+    top: 10%;
+    right: 7rem;
+    text-align: right;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+
+.email-label{
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.passw-label{
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.input-box {
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    border: 1px solid;
+    border-color: #aaaaaa;
+}
+
+.input-box .icon {
+    color: #888;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.input-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0.5rem 0;
+    font-size: 16px;
+    color: black;
+    font-family: 'Zen Old Mincho', serif;
+}
+
+
+.remember {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Zen Old Mincho', serif;
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+.remember label {
+    display: flex;
+    align-items: center;
+}
+
+.remember input {
+    margin-right: 0.5rem;
+}
+
+.remember input:checked {
+    accent-color: black;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 16px;
+    font-weight: 100;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: white;
+    color: black;
+}
+
++ ajustari de inaltime pentru afisarea mesajelor de eroare si succes

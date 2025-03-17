@@ -1,0 +1,86 @@
+.ionContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.loginTitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-top: 10rem;
+    color: #838383;
+}
+
+.inputLogin {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.inputLogin .native-input {
+    padding-left: 2px;
+}
+
+.inputLogin .input-wrapper{
+    padding-left: 12px;
+}
+
+.loginButton {
+    width: 50%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #eaeaea;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.errorMessage{
+
+}
+
+.forgotPasswordLink{
+    margin-top: 12%;
+    font-family: Lora, sans-serif;
+}
+
+.signUpLink{
+    margin-top: 10%;
+    font-family: Lora, sans-serif;
+}
+
+.links{
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.logo{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../urbanBatDetective.png');
+    background-size: cover;
+    background-position: center;
+    height: 81px;
+    width: 300px;
+    margin-bottom: 15%;
+    margin-top: 35%;
+}

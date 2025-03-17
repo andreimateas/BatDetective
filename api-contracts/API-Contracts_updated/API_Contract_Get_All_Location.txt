@@ -1,0 +1,71 @@
+API Contract for Getting Locations
+
+Endpoint: Get Locations
+URL: /api/locations
+Method: GET
+Request Content-Type: N/A
+
+Request Parameters
+No parameters are required for this endpoint.
+
+
+Success Response
+HTTP Status: 200 OK
+Response Body (JSON Example):
+
+{
+    "id": "63a16bf7293432b8f4c2a92d",
+    "description": "Beautiful view of a park",
+    "latitude": "34.0522",
+    "longitude": "-118.2437",
+    "image": "base64encoded-image-or-url",  // The stored file reference or null if no image
+    "dateAndTimeOfAddingLocation": "2024-12-11T15:45:00",
+    "userId": "5f83a3d2e8b17c3b7808b4e2",
+    "dateAndTimeOfObservation": "2024-12-11T15:30:00",
+    "individualOrColony": "Colony",
+    "flying": "Flying",
+    "moveOption": null,
+    "typeOfBuilding": null
+}
+
+
+Failure Responses
+HTTP Status: 401 Unauthorized
+Response Body (JSON):
+
+{
+"flag": true,
+"code": 401,
+"message": "Unauthorized access",
+"data": ""
+}
+
+HTTP Status: 403 Forbidden
+Response Body (JSON):
+
+{
+"flag": true,
+"code": 403,
+"message": "Access is forbidden",
+"data": ""
+}
+
+HTTP Status: 404 Not Found
+Response Body (JSON):
+
+{
+"flag": true,
+"code": 404,
+"message": "Resource not found",
+"data": ""
+}
+
+HTTP Status: 500 Internal Server Error
+Response Body (JSON):
+
+{
+"flag": true,
+"code": 500,
+"message": "Unexpected server error",
+"data": {}
+}

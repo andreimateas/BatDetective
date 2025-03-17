@@ -1,0 +1,56 @@
+API Contract for Deleting Location
+Endpoint: /api/locations/{locationId}
+Method: DELETE
+Request Content-Type: N/A
+
+Request Parameters:
+Parameter	Type	Required	Description
+locationId	String	Yes (Path)	The unique identifier of the location to be deleted.
+
+Success Response:
+HTTP Status	    Description
+204 No Content	Location successfully deleted.
+
+Response Content-Type: N/A
+Response Body: None
+
+Failure Responses:
+400 Bad Request - Invalid Location ID: Occurs when the locationId is invalid (e.g., an empty or malformed string).
+{
+  "flag": true,
+  "code": 400,
+  "message": "Invalid locationId provided.",
+  "data": ""
+}
+
+404 Not Found - Location Not Found: Occurs when no location matches the provided locationId.
+{
+  "flag": true,
+  "code": 404,
+  "message": "Location with ID 'locationId' not found.",
+  "data": ""
+}
+
+401 Unauthorized - User Not Logged In: Occurs when the user is not authenticated.
+{
+  "flag": true,
+  "code": 401,
+  "message": "Unauthorized access",
+  "data": ""
+}
+
+403 Forbidden - User Lacks Permissions: Occurs when the authenticated user does not have permission to delete the location.
+{
+  "flag": true,
+  "code": 403,
+  "message": "Access is forbidden",
+  "data": ""
+}
+
+500 Internal Server Error: Occurs due to an unexpected server-side issue.
+{
+  "flag": true,
+  "code": 500,
+  "message": "Unexpected server error",
+  "data": {}
+}

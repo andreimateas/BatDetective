@@ -1,0 +1,28 @@
+ion-segment {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+ion-segment-button {
+    flex-shrink: 0;
+    min-width: 0;
+    padding: 5px 0;
+    margin: 0;
+    width: auto;
+    text-align: center;
+    white-space: nowrap;
+}
+
+ion-label {
+    text-transform: none;
+    font-size: 12px;
+    white-space: nowrap;
+    font-family: Inter, sans-serif;
+}
+
+ion-icon{
+
+}
+

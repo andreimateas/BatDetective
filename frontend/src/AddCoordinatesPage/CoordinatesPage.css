@@ -1,0 +1,173 @@
+
+.add-location-div {
+    display: flex;
+    align-content: center;
+    background-color: #f3f3f3;
+    gap: 1rem;
+}
+
+#add-coordinates-form-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 37vw;
+    height: 93vh;
+    font-family: "Inter", serif;
+    margin-top: 2rem;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.coordinates-span {
+    position: relative;
+    font-family: "Lora", serif;
+    font-size: 100%;
+    color: black;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.title
+{
+    position: relative;
+    font-family: "Lora", serif;
+    font-size: 100%;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.coord-input {
+    height: 1rem;
+    display: flex;
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #d2d2d2;
+    font-size: 10px;
+    color: black;
+}
+
+.coord-input::placeholder {
+    color: #d2d2d2;
+    font-family: 'Inter', serif;
+}
+
+#send-coordinates-button {
+    background-color: #1ac8ed;
+    color: white;
+    font-family: Inter, sans-serif;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 70%;
+}
+
+#send-coordinates-button:hover {
+    background-color: white;
+    color: black;
+}
+
+#bat-description-textarea {
+    background-color: white;
+    color: black;
+    padding: 1em;
+    border-radius: 10px;
+    border-color: #d2d2d2;
+    outline: none;
+    font-family: Inter, serif;
+    font-size: 70%;
+    height: 10vh;
+    max-height: 20vh;
+    margin-bottom: 20px;
+    max-width: 110%;
+}
+
+#bat-description-textarea::placeholder {
+    color: #d2d2d2;
+    font-family: 'Inter', serif;
+}
+
+.dropdown-div{
+    display: flex;
+    flex-direction: column;
+}
+
+#dropdown{
+    position: relative;
+    font-family: "Lora", serif;
+    color: black;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.calendar-input-container {
+    display: inline-block;
+    position: relative;
+}
+
+.calendar-input {
+    padding: 8px 10px;
+    font-family: "Lora", serif;
+    font-size: 11px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.calendar-logo {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 16.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #007bff;
+}
+
+.react-datepicker__triangle {
+    display: none;
+}
+
+.react-datepicker {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-input:hover {
+    border: 1px dashed #1ac8ed;
+    cursor: pointer;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+}
+
+.radioBtn{
+    margin-top: 0.7rem;
+}
+
+#flyCheckbox{
+    margin-top: 0.9rem;
+}
+

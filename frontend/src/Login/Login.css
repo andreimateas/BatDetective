@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    position: absolute;
+    margin: 0;
+}
+
+
+.logo {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../urbanBatDetective.png');
+    background-size: cover;
+    background-position: center;
+    height: 81px;
+    width: 300px;
+    margin-bottom: 5px;
+}
+
+
+.form-wrapper {
+    font-family: "Lora", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    transition: height 0.3s ease, width 0.3s ease;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-wrapper form {
+    width: 100%;
+}
+
+.form-wrapper.error,
+.form-wrapper.success {
+    height: 55%;
+    width: 250px;
+}
+
+.message {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    font-family: 'Inter', serif;
+    font-size: 14px;
+}
+
+.message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.input-box {
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    padding: 0.75rem;
+    margin-bottom: 18px;
+    border-radius: 15px;
+    border: 1px solid #aaaaaa;
+    margin-top: 5px;
+    width: 80%;
+}
+
+.input-box .icon {
+    color: #888;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.input-box input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0.5rem 0;
+    font-size: 14px;
+    color: #000000;
+    font-family: Inter, sans-serif;
+}
+.input-box input::placeholder {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0.5rem 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.remember label {
+    display: flex;
+    align-items: center;
+}
+
+.remember input {
+    margin-right: 0.5rem;
+}
+
+.remember input:checked {
+    accent-color: #1ac8ed;
+}
+
+
+button[type="submit"] {
+    width: 80%;
+    padding: 0.75rem;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    color: #fff;
+    background-color: #1ac8ed;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+button[type="submit"]:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.link-to-register {
+    margin-top: 5px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+}
+
+button[type="button"] {
+    font-family: "Lora", sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    color: #1ac8ed;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 0 auto;
+    display: block;
+}
+
+button[type="button"]:hover {
+    color: #000000;
+}
