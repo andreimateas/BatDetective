@@ -5,7 +5,7 @@ Cartarea coloniilor de lilieci din zonele urbane/Bat Detective
 Identificarea și cartarea coloniilor de lilieci din mediul urban va permite protejarea liliecilor pe termen lung prin identificarea amenințărilor de tip proiecte de reabilitare termică a locuințelor, demolări, distrugere intenționată. Prin cartarea coloniilor se pot realiza acțiuni de educare și conștientizare pentru locuitorii din proximitate. 
 
 <h3>Utilizatorii Aplicației</h3>
-Aplicația va fi utilizată în primul rând de studenți, în cadrul unor lucrări /activități practice la discipline de ecologie/biologie și conexe, dar poate fi accesibilă publicului larg 
+Aplicația va fi utilizată în primul rând de studenți, în cadrul unor lucrări/activități practice la discipline de ecologie/biologie și conexe, dar poate fi accesibilă publicului larg 
 
 <h3>Ce ar trebui să facă aplicația?</h3>
 Features:
@@ -23,5 +23,5 @@ Features:
 <h3>Platforma dorită</h3>
 <ul>
   <li>Telefon mobil pentru utilizatori </li>
-  <li>elefon și laptop pentru cercetător </li>
+  <li>Telefon și laptop/PC pentru cercetător </li>
 </ul>
