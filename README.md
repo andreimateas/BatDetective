@@ -1,6 +1,12 @@
 # BatDetective
 Cartarea coloniilor de lilieci din zonele urbane/Bat Detective 
 
+<br />
+
+![alt text](ss/BatDetective.png)
+
+<br />
+
 <h3>Descrierea Problemei </h3>
 Identificarea și cartarea coloniilor de lilieci din mediul urban va permite protejarea liliecilor pe termen lung prin identificarea amenințărilor de tip proiecte de reabilitare termică a locuințelor, demolări, distrugere intenționată. Prin cartarea coloniilor se pot realiza acțiuni de educare și conștientizare pentru locuitorii din proximitate. 
 
